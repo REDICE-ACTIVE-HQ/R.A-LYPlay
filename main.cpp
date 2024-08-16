@@ -1,13 +1,15 @@
 #include <iostream>
+#include <windows.h>
 #include "libraries/args.hxx"
 #include "libraries/color.hpp"
+#include "libraries/audio_out.cc"
 
 
 #include "core/message.hpp"
-#include "core/audiofile.hpp"
+#include "core/audiofile.cpp"
 
 
-
+using namespace anshub;
 
 int main(int argc, char const *argv[])
 {
@@ -15,9 +17,6 @@ int main(int argc, char const *argv[])
     {
         std::cout << dye::aqua("R.A-LYPLAY Version 0.0.1 Crab") << std::endl;
     }
-
-    std::cout << argc;
-
 	
     args::ArgumentParser parser("*************************************************************", "*************************************************************");
     //parser.LongPrefix("/");
@@ -51,9 +50,8 @@ int main(int argc, char const *argv[])
 
     if(playfile)
     {
-        std::cout << "File :" << args::get(playfile) << std::endl;
-
-
+        std::string buffer = args::get(playfile);
+        afstream::PlayAudio(buffer);
     }
     else if(playurl)
     {
