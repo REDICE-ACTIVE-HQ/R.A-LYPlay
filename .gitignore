@@ -1,0 +1,4 @@
+bin_x64
+cli_example.cpp
+main_cli.cpp
+main_window.cpp
