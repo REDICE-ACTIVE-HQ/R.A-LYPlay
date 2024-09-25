@@ -1,1 +1,0 @@
-g++ -L. main.cpp -lbass -lbass_fx -llibaudio -o bin_x64/main.exe
